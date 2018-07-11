@@ -95,7 +95,8 @@ handlers.hello = function(data, callback){
 	//console.log(data.qsObject[message]);
 
 	else {
-		let message = typeof(data.qsObject['message']) ? data.qsObject['message'] : "Grandma plays the cello";
+		console.log(typeof(data.qsObject['message']));
+		let message = typeof(data.qsObject['message'])=='string' ? "Hello "+data.qsObject['message']+"!" : "Grandma plays the cello";
 		callback(200,{"message": message});
 	}
 	
